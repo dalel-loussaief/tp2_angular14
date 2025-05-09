@@ -1,0 +1,49 @@
+<!-- <h1>Bonjour {{ name }} !</h1> -->
+
+
+<!-- <img [src]="imageUrl" alt="Image dynamique"> -->
+
+
+<!-- <img src="{{ imageUrl }}"> -->
+
+<button (click)="showMessage()">Clique-moi</button>
+
+<p>Compteur : {{ count }}</p>
+<button (click)="increment()">+1</button>
+
+<p>Ton nom : {{ name }}</p>
+
+<input [(ngModel)]="name" placeholder="Entre ton nom">
+
+<button (click)="isVisible = !isVisible">
+  Toggle Affichage
+</button>
+
+<div *ngIf="isVisible">
+ Ce texte apparaît si isVisible est TRUE.
+</div>
+
+<h2>Liste des fruits :</h2>
+<ul>
+  <li *ngFor="let fruit of fruits">
+     {{ fruit }}
+  </li>
+</ul>
+
+<p [ngStyle]="{'color': isImportant ? 'red' : 'black', 'font-weight': isImportant ? 'bold' : 'normal'}">
+  Ce texte change de style selon la variable.
+</p>
+<div [ngStyle]="monStyle">
+  Ce texte a un style personnalisé depuis un objet.
+</div>
+
+<div [ngSwitch]="choixCouleur">
+  <p *ngSwitchCase="'rouge'"> Tu as choisi ROUGE.</p>
+  <p *ngSwitchCase="'bleu'"> Tu as choisi BLEU.</p>
+  <p *ngSwitchCase="'vert'"> Tu as choisi VERT.</p>
+  <p *ngSwitchDefault> Couleur inconnue.</p>
+</div>
+
+<p [ngClass]="{'important': isImportant, 'error': isError}">
+  Ce texte change de style selon les classes dynamiques.
+</p>
